@@ -18,7 +18,7 @@ public class PostService {
 
     private final String LOCAL_MANUAL_PATH = "static/post/";
     private final int startPage = 1;
-    private final int lastPage = 9;
+    private final int lastPage = 11;
 
     public String getMarkdownValueFormLocal(String page) throws Exception {
         StringBuilder stringBuilder = new StringBuilder();
