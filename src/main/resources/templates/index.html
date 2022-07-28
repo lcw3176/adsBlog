@@ -13,7 +13,7 @@
                 <div th:each="post : ${postList}">
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a th:href="@{'/post/' + ${post.url}}">
+                        <a th:href="@{'/blog/post/' + ${post.url}}">
                             <h2 class="post-title" th:utext="${post.title}"></h2>
                         </a>
                     </div>
