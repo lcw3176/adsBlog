@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 @Controller
 @RequiredArgsConstructor
@@ -17,10 +18,10 @@ public class PostController {
     private final PostService postService;
 
     @GetMapping
-    public String showMainPage(Model model) throws IOException {
+    public String showMainPage(Model model) throws IOException, URISyntaxException {
         model.addAttribute("postList", postService.getPostList());
 
-        return "index";
+        return "fragment/index";
     }
 
     @GetMapping("/post/{page}")
