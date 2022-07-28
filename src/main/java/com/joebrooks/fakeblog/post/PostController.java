@@ -1,23 +1,22 @@
 package com.joebrooks.fakeblog.post;
 
 import lombok.RequiredArgsConstructor;
-import org.commonmark.node.Node;
-import org.commonmark.parser.Parser;
-import org.commonmark.renderer.html.HtmlRenderer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/blog")
 public class PostController {
 
     private final PostService postService;
 
-    @GetMapping("/")
+    @GetMapping
     public String showMainPage(Model model) throws IOException {
         model.addAttribute("postList", postService.getPostList());
 
